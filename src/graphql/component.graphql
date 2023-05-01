@@ -1,0 +1,37 @@
+fragment component on Component {
+  id
+  colour
+  colourant
+  componentType
+  coverage
+  name
+  opacity
+  position
+  weight
+  layers {
+    ...layer
+  }
+}
+
+mutation createComponent($data: CreateComponentInput!) {
+  createComponent(data: $data) {
+    ...component
+  }
+}
+mutation updateComponent($data: UpdateComponentInput!) {
+  updateComponent(data: $data) {
+    ...component
+  }
+}
+
+mutation duplicateComponent($id: String!) {
+  duplicateComponent(id: $id) {
+    ...project
+  }
+}
+
+mutation deleteComponent($id: String!) {
+  deleteComponent(id: $id) {
+    ...component
+  }
+}

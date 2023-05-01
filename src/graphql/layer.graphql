@@ -1,0 +1,32 @@
+fragment layer on Layer {
+  id
+  density
+  layerType
+  materialKey
+  name
+  visibleOuterLayer
+  weight
+}
+mutation createLayer($data: CreateLayerInput!) {
+  createLayer(data: $data) {
+    ...layer
+  }
+}
+
+mutation updateLayer($data: UpdateLayerInput!) {
+  updateLayer(data: $data) {
+    ...layer
+  }
+}
+
+mutation duplicateLayer($id: String!) {
+  duplicateLayer(id: $id) {
+    ...project
+  }
+}
+
+mutation deleteLayer($id: String!) {
+  deleteLayer(id: $id) {
+    ...layer
+  }
+}

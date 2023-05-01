@@ -1,0 +1,38 @@
+fragment packaging on Packaging {
+  id
+  name
+  packagingType
+  position
+  weight
+  width
+  length
+  height
+  volume
+  components {
+    ...component
+  }
+}
+
+mutation createPackaging($data: CreatePackagingInput!) {
+  createPackaging(data: $data) {
+    ...packaging
+  }
+}
+
+mutation updatePackaging($data: UpdatePackagingInput!) {
+  updatePackaging(data: $data) {
+    ...packaging
+  }
+}
+
+mutation duplicatePackaging($id: String!) {
+  duplicatePackaging(id: $id) {
+    ...project
+  }
+}
+
+mutation deletePackaging($id: String!) {
+  deletePackaging(id: $id) {
+    ...packaging
+  }
+}

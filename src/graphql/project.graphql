@@ -1,0 +1,29 @@
+fragment project on Project {
+  id
+  key
+  name
+  packagings {
+    ...packaging
+  }
+}
+
+query Project($id: String!) {
+  project(id: $id) {
+    ...project
+  }
+}
+
+query Projects($name: String, $key: String, $take: Int, $skip: Int) {
+  projects(name: $name, key: $key, take: $take, skip: $skip) {
+    id
+    name
+    key
+    packagingsCount
+  }
+}
+
+mutation updateProject($data: UpdateProjectInput!) {
+  updateProject(data: $data) {
+    ...project
+  }
+}

@@ -1,0 +1,10 @@
+schema:
+  - "https://recyda-api.feezco.com"
+documents:
+  - "./src/graphql/**/*.graphql"
+generates:
+  ./src/generated/graphql.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
